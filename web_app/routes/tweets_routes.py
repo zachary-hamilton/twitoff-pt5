@@ -21,11 +21,11 @@ def new_tweet():
 def create_tweet():
     print("FORM DATA:", dict(request.form))
     
-    new_tweet = Tweet(user_id=request.form["user_id"])
+    new_tweet = Tweet(tweet=request.form['tweet'], user_id=request.form["user_id"])
     db.session.add(new_tweet)
     db.session.commit()
 
     return jsonify({
         "message": "TWEET CREATED OK",
-        "user": dict(request.form)
+        "tweet": dict(request.form)
     })

@@ -10,16 +10,16 @@
 
     <p>Please fill out the form and submit to create a new tweet!</p>
 
-    <form action="/books/create" method="POST">
+    <form action="/tweets/create" method="POST">
 
         <label>Tweet</label>
         <input type="text" name="tweet" placeholder="tweet tweet tweet" value="tweet tweet tweet">
 
         <label>Author:</label>
         <select name="user_id">
-            {% for user in users %}
-            <li>{{ user["user_name"] }}</li>
-            {% endfor %}
+            <option value="1">User XYZ</option>
+            <option value="2">Harry Potter</option>
+            <option value="3">Christopher Robin</option>
         </select>
 
         <button>Submit</button>
