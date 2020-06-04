@@ -20,7 +20,7 @@ class User(db.Model):
     user_name = db.Column(db.String(128))
 
     def __repr__(self):
-        return f"<Book {self.id} {self.title}>"
+        return f"<Book {self.id} {self.user_name}>"
 
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
