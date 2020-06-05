@@ -1,2 +1,4 @@
 migrations
 *.db
+
+.env
