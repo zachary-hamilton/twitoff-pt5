@@ -11,7 +11,6 @@ stats_routes = Blueprint('stats_routes', __name__)
 def predict():
     print("PREDICT ROUTE...")
     print("FORM DATA:", dict(request.form))
-    #> {'screen_name_a': 'elonmusk', 'screen_name_b': 's2t2', 'tweet_text': 'Example tweet text here'}
     screen_name_a = request.form["screen_name_a"]
     screen_name_b = request.form["screen_name_b"]
     tweet_text = request.form["tweet_text"]
@@ -45,14 +44,11 @@ def predict():
 
     print("-----------------")
     print("MAKING A PREDICTION...")
-    #result_a = classifier.predict([user_a_tweets[0].embedding])
-    #result_b = classifier.predict([user_b_tweets[0].embedding])
 
     basilica_api = basilica_api_client()
     example_embedding = basilica_api.embed_sentence(tweet_text, model='twitter')
     result = classifier.predict([example_embedding])
 
-    #return jsonify({"message": "RESULTS", "most_likely": result[0]})
     return render_template("results.html",
         screen_name_a=screen_name_a,
         screen_name_b=screen_name_b,

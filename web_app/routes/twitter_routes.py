@@ -26,8 +26,6 @@ def get_user(screen_name=None):
     db_user.followers_count = twitter_user.followers_count
     db.session.add(db_user)
     db.session.commit()
-    #return "OK"
-    #breakpoint()
 
     basilica_api = basilica_api_client()
 
@@ -52,7 +50,5 @@ def get_user(screen_name=None):
         db.session.add(db_tweet)
         counter+=1
     db.session.commit()
-    #breakpoint()
-    #return "OK ok"
     return render_template("user.html", user=db_user, tweets=statuses) # tweets=db_tweets
     
