@@ -2,6 +2,7 @@
 
 import os
 from flask import Flask
+from dotenv import load_dotenv
 
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
@@ -11,7 +12,7 @@ from web_app.routes.tweets_routes import tweets_routes
 from web_app.routes.twitter_routes import twitter_routes
 from web_app.routes.stats_routes import stats_routes
 
-
+load_dotenv()
 DATABASE_URI = os.getenv('DATABASE_URL')
 
 def create_app():
