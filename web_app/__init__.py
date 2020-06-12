@@ -14,6 +14,7 @@ from web_app.routes.stats_routes import stats_routes
 
 load_dotenv()
 DATABASE_URI = os.getenv('DATABASE_URL')
+SECRET_KEY = 'secret value'
 
 def create_app():
     app = Flask(__name__)
